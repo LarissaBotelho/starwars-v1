@@ -1,0 +1,39 @@
+<section class="section--align-top">
+  <sw-buttonSubmit>Informe um planeta:</sw-buttonSubmit>
+  <form>
+    <div class="form-group">
+      <input type="text" class="form-control" id="inputPlaneta" placeholder="Informe o planeta">
+      <sw-buttonSubmit (click)="getPlanetName();">Enviar</sw-buttonSubmit>
+    </div>
+  </form>
+</section>
+
+
+<sw-loading class="section--align-center" *ngIf="loading"></sw-loading>
+
+<section class="section--align-center" *ngIf="!loading">
+  <sw-name>{{ planet.name }}</sw-name>
+
+  <div class="category">
+    <p class="category__paragraph">
+      <sw-characteristics>Clima:</sw-characteristics>
+      {{ planet.climate }}
+    </p>
+    <p class="category__paragraph">
+      <sw-characteristics>Terreno:</sw-characteristics>
+      {{ planet.terrain }}
+    </p>
+    <p class="category__paragraph">
+      <sw-characteristics>População:</sw-characteristics>
+      {{ planet.population }}
+    </p>
+    <p class="category__paragraph">
+      <sw-characteristics>Aparição:</sw-characteristics>
+      {{ planet.films?.length }} {{planet.films?.length === 1 ? 'film' : 'films'}}
+    </p>
+  </div>
+  <sw-button (click)="getRandomPlanet();">Selecionar outro planeta aleatório</sw-button>
+  <sw-button [routerLink]="['/starwars/categories']">🡠 Voltar</sw-button>
+</section>
+
+<sw-footer></sw-footer>

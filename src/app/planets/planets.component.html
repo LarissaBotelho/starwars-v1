@@ -1,0 +1,29 @@
+<sw-loading class="section--align-center" *ngIf="loading"></sw-loading>
+
+<section class="section--align-center" *ngIf="!loading">
+  <sw-name>{{ planet.name }}</sw-name>
+
+  <div class="category">
+    <p class="category__paragraph">
+      <sw-characteristics>Clima:</sw-characteristics>
+      <input type="text" class="form-control" id="inputJogo" placeholder="Informe o clima">
+    </p>
+    <p class="category__paragraph">
+      <sw-characteristics>Terreno:</sw-characteristics>
+      <input type="text" class="form-control" id="inputJogo" placeholder="Informe o terreno">
+    </p>
+    <p class="category__paragraph">
+      <sw-characteristics>População:</sw-characteristics>
+      <input type="text" class="form-control" id="inputJogo" placeholder="Informe população">
+    </p>
+    <p class="category__paragraph">
+      <sw-characteristics>Aparição:</sw-characteristics>
+      <input type="text" class="form-control" id="inputJogo" placeholder="Informe o clima">
+    </p>
+  </div>
+  <sw-button [routerLink]="['/starwars/categories']">✔️ Enviar</sw-button>
+  <sw-button (click)="getRandomPlanet();">Selecionar outro planeta aleatório</sw-button>
+  <sw-button [routerLink]="['/starwars/categories']">🡠 Voltar</sw-button>
+</section>
+
+<sw-footer></sw-footer>
